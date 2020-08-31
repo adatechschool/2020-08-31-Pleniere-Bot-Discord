@@ -19,21 +19,23 @@ GUILD = os.getenv('DISCORD_GUILD')
 # associer le bot à un client
 client = discord.Client()
 
-# décorateur qui attend le paramettre de connection
+# attente d'un événement(connexion) 
 @client.event
- 
+
+# fonction pour se connecter au serveur Discord
 async def on_ready():
+# recherche du nom du serveur dans la liste des guilds accessible par le bot
     for guild in client.guilds:
         if guild.name == GUILD:
             break 
-    
+# affichage de la recherche
     print(
         f'{client.user} is connected to the following guild: \n' 
         f'{guild.name}(id: {guild.id})\n'
     )
-
+# listing et affichage des noms d'utilisateurs de la guild
     members = '\n - '.join([member.name for member in guild.members])
     print(f'Guild Members:\n - {members}')
-    
+
 # Connexion au serveur Discord grâce au token d'authentification du bot
 client.run(TOKEN)
