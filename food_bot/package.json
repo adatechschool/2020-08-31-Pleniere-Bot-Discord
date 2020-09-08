@@ -1,0 +1,15 @@
+{
+  "name": "food_bot",
+  "version": "1.0.0",
+  "description": "a bot that will answer all your questions about food",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Loan",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/client": "^5.0.2",
+    "@slack/web-api": "^5.11.0"
+  }
+}
